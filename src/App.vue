@@ -9,6 +9,8 @@
   import {ref, onMounted, withCtx } from 'vue';
   import { TEngine } from './assets/tEngine';
   import { basicObjectMeshList } from './assets/tBasicObject';
+  import { basicLightList } from './assets/tlights';
+  
   // import { TCanvasTextureEditor } from './assets/TCanvasTextureEditor';
 
   const threeTarget = ref(null);
@@ -16,7 +18,8 @@
   onMounted(() => {
     const TE = new TEngine(threeTarget.value);
     TE.addObject(basicObjectMeshList);
-    TE.setModel();
+    TE.addObject(basicLightList);
+    // TE.setModel();
 
     // const textCanvase = new TCanvasTextureEditor();
    

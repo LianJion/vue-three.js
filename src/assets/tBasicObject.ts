@@ -1,6 +1,6 @@
 
 import  { Mesh, 
-      BoxBufferGeometry, 
+      BoxGeometry, 
       MeshStandardMaterial, 
       PointsMaterial,
       SphereGeometry,
@@ -13,7 +13,7 @@ import  { Mesh,
 
 // 材质，几何的公用
 const material = new MeshStandardMaterial({color: 'rgb(255,0,0)'});
-const geometry = new BoxBufferGeometry(10,10,10);
+const geometry = new BoxGeometry(20,20,20);
 
     
   // 物体
@@ -30,7 +30,7 @@ const geometry = new BoxBufferGeometry(10,10,10);
   )
 
 
-  export const ball: Line = new Line(
+  export const ball: Line = new Mesh(
     new SphereGeometry(5,10,10),
     new MeshStandardMaterial({color: 'rgb(255,0,0)'})
   ) 
@@ -53,6 +53,15 @@ const geometry = new BoxBufferGeometry(10,10,10);
   ballPoint.position.x = 70;
 
 
+  export const stage: Mesh = new Mesh(
+    new BoxGeometry(200,10,200),
+    new MeshStandardMaterial({color: 'gray'})
+  )
+
+  stage.position.y = -5;
+
+  box.position.y = 10;
+
   export const basicObjectMeshList: Object3D[] = [];
 
-  basicObjectMeshList.push(box,box2,circle,ball,ballPoint);
+  basicObjectMeshList.push(box,stage);
