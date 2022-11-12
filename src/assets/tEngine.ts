@@ -4,7 +4,7 @@ import  {
   PerspectiveCamera, 
   HTMLElement,
   Vector3,
-  AmbientLight,
+  // AmbientLight,
   Object3D,
   AxesHelper,
   GridHelper
@@ -51,14 +51,14 @@ export class TEngine {
     this.camera.up = new Vector3(0,1,0);
 
     // 灯光 打一个白色的灯光
-    const ambientLight: AmbientLight = new AmbientLight('rgb(255,255,255)', 1);
+    // const ambientLight: AmbientLight = new AmbientLight('rgb(255,255,255)', 1);
 
     // 坐标轴
     const axeshelper: AxesHelper = new AxesHelper(500)
     // 网格
     const gridHelper: GridHelper = new GridHelper(500, 10, 'rgb(200,200,200)', 'rgb(0,100,100)')
 
-    this.scene.add(ambientLight);
+    // this.scene.add(ambientLight);
     this.scene.add(axeshelper);
     this.scene.add(gridHelper);
     
