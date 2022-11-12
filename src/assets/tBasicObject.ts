@@ -58,9 +58,18 @@ const geometry = new BoxGeometry(20,20,20);
     new MeshStandardMaterial({color: 'gray'})
   )
 
+  
+  // 位置设置
   stage.position.y = -5;
-
   box.position.y = 10;
+
+
+  // 阴影相关设置
+  stage.castShadow = true;
+  stage.receiveShadow = true;
+
+  box.castShadow = true;
+  box.receiveShadow = true;
 
   export const basicObjectMeshList: Object3D[] = [];
 

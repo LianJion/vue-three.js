@@ -1,7 +1,8 @@
 import {
   AmbientLight,
   PointLight,
-  Object3D
+  Object3D,
+  SpotLight
 
 }  from 'three';
 
@@ -12,9 +13,18 @@ const ambientLight: AmbientLight = new AmbientLight('rgb(255,255,255)', 0.3);
 export const pointLight: PointLight = new PointLight('rgb(255,0,0)', 0.7, 200, 0.1);
 
 
-pointLight.position.set(30, 20, 20);
+const angelChange = Math.PI/180;
+export const spotLight: SpotLight = new SpotLight('rgb(255,0,0)', 1, 200, angelChange * 30, 0, 0)
+
+// pointLight.position.set(30, 20, 20);
+
+spotLight.position.set(-50, 50, -50);
+spotLight.castShadow = true;
+
+// 产生阴影的关键， 渲染器 阴影开启， 灯光，物体 castShadow 开启， 场地接受阴影开启。
+
 
 // 最终颜色值 =  单体设置颜色值 与 环境 颜色值 * 强度 乘积  转换成 0 - 1， 进行乘积 
 export const basicLightList: Object3D[] = [];
 
-basicLightList.push(ambientLight, pointLight);
+basicLightList.push(ambientLight, pointLight, spotLight);

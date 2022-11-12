@@ -35,6 +35,9 @@ export class TEngine {
       antiAlias:true 
     })
 
+    // 渲染器 shadowMap 开启阴影
+    this.renderer.shadowMap.enabled = true;
+
     this.renderer.setSize(dom.offsetWidth,dom.offsetHeight ,true);
 
 
