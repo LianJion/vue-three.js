@@ -111,9 +111,14 @@ export class TEngine {
     const dracoLoader = new DRACOLoader();
     dracoLoader.setDecoderPath( 'three/examples/js/libs/draco/' );
     gltfLoader.setDRACOLoader( dracoLoader );
-    gltfLoader.load('src/assets/scene.gltf', (gltf: { scene: any; }) =>{
+    gltfLoader.load('src/assets/molang.gltf', (gltf: { scene: any; }) =>{
+      const scale = .01;
+      gltf.scene.scale.set(scale,scale,scale);
       this.scene.add(gltf.scene)
+
       gltf.scene.position.z = 20;
+      gltf.scene.position.x = 0;
+      gltf.scene.position.y = 10;
     })
   }
 

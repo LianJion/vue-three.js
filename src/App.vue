@@ -6,9 +6,10 @@
 
 <script setup lang="ts">
 
-  import {ref, onMounted } from 'vue';
+  import {ref, onMounted, withCtx } from 'vue';
   import { TEngine } from './assets/tEngine';
   import { basicObjectMeshList } from './assets/tBasicObject';
+  // import { TCanvasTextureEditor } from './assets/TCanvasTextureEditor';
 
   const threeTarget = ref(null);
 
@@ -16,6 +17,20 @@
     const TE = new TEngine(threeTarget.value);
     TE.addObject(basicObjectMeshList);
     TE.setModel();
+
+    // const textCanvase = new TCanvasTextureEditor();
+   
+    // textCanvase.draw(ctx => {
+    //   // ctx.beginPath();
+    //   ctx.rect(10,10,200,200);
+    //   ctx.strokeStyle = 'red';
+    //   ctx.stroke();
+    //   ctx.fillStyle= 'blue';
+    //   ctx.fill();
+    //   // ctx.closePath();
+    // }).preview();
+
+
   });
 
 </script>
