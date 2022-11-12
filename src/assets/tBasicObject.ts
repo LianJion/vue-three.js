@@ -12,7 +12,11 @@ import  { Mesh,
 
 
 // 材质，几何的公用
-const material = new MeshStandardMaterial({color: 'rgb(255,0,0)'});
+const material = new MeshStandardMaterial({
+  color: 'rgb(255,0,0)',
+  roughness: 0.3,  //粗糙度低
+  metalness: 1 // 金属度 为1  变黑，金属会吸收光，漫反射更低，所以看起来会更黑
+});
 const geometry = new BoxGeometry(20,20,20);
 
     
@@ -55,7 +59,10 @@ const geometry = new BoxGeometry(20,20,20);
 
   export const stage: Mesh = new Mesh(
     new BoxGeometry(200,10,200),
-    new MeshStandardMaterial({color: 'gray'})
+    new MeshStandardMaterial({
+      color: 'gray',
+      roughness: 0, // 粗糙度 （镜面反射，漫反射）
+  })
   )
 
   
