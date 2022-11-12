@@ -11,6 +11,8 @@
   import { basicObjectMeshList } from './assets/tBasicObject';
   import { basicLightList } from './assets/tlights';
   
+  import { helperList } from './assets/thelper';
+  
   // import { TCanvasTextureEditor } from './assets/TCanvasTextureEditor';
 
   const threeTarget = ref(null);
@@ -19,6 +21,7 @@
     const TE = new TEngine(threeTarget.value);
     TE.addObject(basicObjectMeshList);
     TE.addObject(basicLightList);
+    TE.addObject(helperList);
     // TE.setModel();
 
     // const textCanvase = new TCanvasTextureEditor();

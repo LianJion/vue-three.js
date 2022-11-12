@@ -6,8 +6,6 @@ import  {
   Vector3,
   // AmbientLight,
   Object3D,
-  AxesHelper,
-  GridHelper
 } from "three";
 
 import Stats from 'three/examples/jsm/libs/stats.module';
@@ -53,14 +51,7 @@ export class TEngine {
     // 灯光 打一个白色的灯光
     // const ambientLight: AmbientLight = new AmbientLight('rgb(255,255,255)', 1);
 
-    // 坐标轴
-    const axeshelper: AxesHelper = new AxesHelper(500)
-    // 网格
-    const gridHelper: GridHelper = new GridHelper(500, 10, 'rgb(200,200,200)', 'rgb(0,100,100)')
-
-    // this.scene.add(ambientLight);
-    this.scene.add(axeshelper);
-    this.scene.add(gridHelper);
+   
     
   
     // 设置背景颜色
