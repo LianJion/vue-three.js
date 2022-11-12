@@ -18,7 +18,7 @@ export const spotLight: SpotLight = new SpotLight('rgb(255,0,0)', 1, 200, angelC
 
 // pointLight.position.set(30, 20, 20);
 
-spotLight.position.set(-50, 50, -50);
+spotLight.position.set(-50, 100, 50);
 spotLight.castShadow = true;
 
 // 产生阴影的关键， 渲染器 阴影开启， 灯光，物体 castShadow 开启， 场地接受阴影开启。

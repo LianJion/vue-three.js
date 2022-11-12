@@ -5,11 +5,13 @@ import  { Mesh,
       PointsMaterial,
       SphereGeometry,
       CircleGeometry, 
+      PlaneGeometry,
       Object3D,
       Line,
       Points
 } from "three";
 
+import { pictureTexture } from './tTextures';
 
 // 材质，几何的公用
 const material = new MeshStandardMaterial({
@@ -65,11 +67,20 @@ const geometry = new BoxGeometry(20,20,20);
   })
   )
 
+
+  export const plane: Mesh = new Mesh(
+    new PlaneGeometry(192,108),
+    new MeshStandardMaterial(
+      {map: pictureTexture}
+    )
+  )
   
   // 位置设置
   stage.position.y = -5;
   box.position.y = 10;
 
+  plane.position.y = 45;
+  plane.scale.set(0.5,0.5,0.5);
 
   // 阴影相关设置
   stage.castShadow = true;
@@ -80,4 +91,4 @@ const geometry = new BoxGeometry(20,20,20);
 
   export const basicObjectMeshList: Object3D[] = [];
 
-  basicObjectMeshList.push(box,stage);
+  basicObjectMeshList.push(box,stage, plane);

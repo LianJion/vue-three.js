@@ -22,6 +22,7 @@
     TE.addObject(basicObjectMeshList);
     TE.addObject(basicLightList);
     TE.addObject(helperList);
+
     // TE.setModel();
 
     // const textCanvase = new TCanvasTextureEditor();
