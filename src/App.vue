@@ -13,10 +13,7 @@
   
   import { helperList } from './assets/thelper';
 
-  import { framePromise, frameMaterial } from './assets/tLoadModel';
-
-  import { Mesh,Material } from 'three';
-  
+  import { getFrame } from './assets/tLoadModel';
   // import { TCanvasTextureEditor } from './assets/TCanvasTextureEditor';
 
   const threeTarget = ref(null);
@@ -41,15 +38,8 @@
     //   // ctx.closePath();
     // }).preview();
 
-    framePromise.then((group) =>{
-      const frameMesh: Mesh = group.children[0] as Mesh;
-      (frameMesh.material as Material).dispose();
-      frameMesh.material = frameMaterial;
-      group.position.z = -5;
-      group.position.y = 45;
-      group.rotation.y = Math.PI/180 * 90;
-      group.scale.set(3,3,3);
-      TE.addObject([group]);
+    getFrame().then((frame) =>{
+     frame && TE.addObject([frame]);
     })
 
   });
