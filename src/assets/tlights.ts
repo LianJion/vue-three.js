@@ -10,11 +10,11 @@ import {
 const ambientLight: AmbientLight = new AmbientLight('rgb(255,255,255)', 0.3);
 
 // 点光
-export const pointLight: PointLight = new PointLight('rgb(255,0,0)', 0.7, 200, 0.1);
+export const pointLight: PointLight = new PointLight('rgb(255,255,255)', 0.7, 200, 0.1);
 
 
 const angelChange = Math.PI/180;
-export const spotLight: SpotLight = new SpotLight('rgb(255,0,0)', 1, 200, angelChange * 30, 0, 0)
+export const spotLight: SpotLight = new SpotLight('rgb(255,255,255)', 1, 200, angelChange * 30, 0, 0)
 
 // pointLight.position.set(30, 20, 20);
 

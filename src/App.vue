@@ -6,12 +6,16 @@
 
 <script setup lang="ts">
 
-  import {ref, onMounted, withCtx } from 'vue';
+  import {ref, onMounted } from 'vue';
   import { TEngine } from './assets/tEngine';
   import { basicObjectMeshList } from './assets/tBasicObject';
   import { basicLightList } from './assets/tlights';
   
   import { helperList } from './assets/thelper';
+
+  import { framePromise, frameMaterial } from './assets/tLoadModel';
+
+  import { Mesh,Material } from 'three';
   
   // import { TCanvasTextureEditor } from './assets/TCanvasTextureEditor';
 
@@ -37,6 +41,16 @@
     //   // ctx.closePath();
     // }).preview();
 
+    framePromise.then((group) =>{
+      const frameMesh: Mesh = group.children[0] as Mesh;
+      (frameMesh.material as Material).dispose();
+      frameMesh.material = frameMaterial;
+      group.position.z = -5;
+      group.position.y = 45;
+      group.rotation.y = Math.PI/180 * 90;
+      group.scale.set(3,3,3);
+      TE.addObject([group]);
+    })
 
   });
 
