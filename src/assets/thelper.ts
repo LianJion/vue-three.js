@@ -19,4 +19,4 @@ const pointLightHelper: PointLightHelper = new PointLightHelper(pointLight, poin
 const spotLightHelper: SpotLightHelper = new SpotLightHelper(spotLight, spotLight.distance,spotLight.color)
 export const helperList: Object3D[] = [];
 
-helperList.push(axeshelper, pointLightHelper, spotLightHelper);
+helperList.push(axeshelper, spotLightHelper);

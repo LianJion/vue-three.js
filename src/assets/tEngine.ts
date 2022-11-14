@@ -47,7 +47,7 @@ export class TEngine {
 
     // 相机
     this.camera = new PerspectiveCamera(45, dom.offsetWidth/dom.offsetHeight, 1, 1000)
-    this.camera.position.set(20,20,20);
+    this.camera.position.set(20,500,20);
     this.camera.lookAt(new Vector3(0,0,0));
     this.camera.up = new Vector3(0,1,0);
 

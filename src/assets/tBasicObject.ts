@@ -60,7 +60,7 @@ const geometry = new BoxGeometry(20,20,20);
 
 
   export const stage: Mesh = new Mesh(
-    new BoxGeometry(200,10,200),
+    new BoxGeometry(400,10,200),
     new MeshStandardMaterial({
       color: 'gray',
       roughness: 0, // 粗糙度 （镜面反射，漫反射）
@@ -74,12 +74,22 @@ const geometry = new BoxGeometry(20,20,20);
       {map: pictureTexture}
     )
   )
+
+
+  export const wall: Mesh = new Mesh(
+    new BoxGeometry(600,200,10),
+    new MeshStandardMaterial({
+      color: 'white'
+    })
+
+  )
   
   // 位置设置
   stage.position.y = -5;
   box.position.y = 10;
 
-  plane.position.y = 45;
+  plane.position.y = 85;
+  plane.position.z = -65;
   plane.scale.set(0.5,0.5,0.5);
 
   // 阴影相关设置
@@ -91,4 +101,11 @@ const geometry = new BoxGeometry(20,20,20);
 
   export const basicObjectMeshList: Object3D[] = [];
 
-  basicObjectMeshList.push(box,stage, plane);
+
+  wall.position.y = 100;
+  wall.position.z = -80;
+
+  // 更新矩阵以及世界矩阵，适用于 spothelper重新定位 spotlight
+  wall.updateMatrix();
+  wall.updateMatrixWorld();
+  basicObjectMeshList.push(stage, plane, wall);

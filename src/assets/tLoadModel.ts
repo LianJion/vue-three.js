@@ -44,8 +44,8 @@ export const getFrame = async function(): Promise<Mesh|null> {
             roughnessMap: frameRoughnessTexture,
             bumpMap: frameDisplacementTexture // displacementMap 以顶点为准，而bump是凹凸
         })
-        frame.position.z = -5;
-        frame.position.y = 45;
+        frame.position.z = -70;
+        frame.position.y = 85;
         frame.rotation.y = Math.PI/180 * 90;
         frame.scale.set(3,3,3);
 
